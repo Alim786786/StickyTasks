@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "StickyTasks",
+  "version": "1.0.0",
+  "description": "A minimal floating checklist with a global list and per-tab notes. All data stays on your device.",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*", "file:///*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; connect-src 'none'; img-src 'self' data:"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html"],
+      "matches": ["http://*/*", "https://*/*", "file:///*"]
+    }
+  ],
+  "action": {
+    "default_title": "StickyTasks",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "minimum_chrome_version": "110"
+}
